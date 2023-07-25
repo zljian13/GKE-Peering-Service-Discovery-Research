@@ -38,6 +38,9 @@ spec:
   type: LoadBalancer
 ```
 
+## Terraform
+Implementation 
+
 # GKE Multi-cluster Services (MCS)
 Multi-cluster Services (MCS) is a gcp solution for managing service discovery across a fleet. Services are exposed to other clusters by using a `ServiceExport` crd, then the operator should automatically export the services across the fleet on the same namespaces. The service can be reached through `<SERVICE_EXPORT_NAME>.<NAMESPACE>.svc.clusterset.local`
 
@@ -50,6 +53,13 @@ Refer to the documentation below on how to enable mcs on a fleet
 
 - [Configuring multi-cluster Services](https://cloud.google.com/kubernetes-engine/docs/how-to/multi-cluster-services)
 - [Multiple Projects Setup (Cross Project Communication)](https://cloud.google.com/kubernetes-engine/docs/how-to/msc-setup-with-shared-vpc-networks#vpc_setup_fleet_host)
+
+## Terraform
+for more information [MCS Terrafrom](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/gke_hub_membership)
+
+```terraform
+
+```
 
 ## Using MCS
 Assume a namespace named `example`, and service `nginx` on that namespace. To export that service across the fleet, create a `ServiceExport` resource on that namespace with the name of the service.
